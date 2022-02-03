@@ -102,4 +102,7 @@ return
 sendInput,-Discussed scope of work with customer.
 -Radiation survey performed, maximum output measured at %rad% uSv/hr. Certificate completed and supplied to customer. -Backup taken and supplied to customer.
 
+::rad cert::12/30/2021
+::rad sn::52403
+
 #SingleInstance Force
