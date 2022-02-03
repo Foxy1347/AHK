@@ -1,0 +1,105 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+;CSA helper break down, need message box and outputs
+^j::
+;Cust
+InputBox, customer, Customer, , , 280, 120
+;SRO
+InputBox, sro, SRO, , , 280, 120
+
+;addr
+InputBox, address, Address, , , 280, 120
+;cit
+InputBox, cit, City, , , 280, 120
+;sta
+InputBox, state, State, , , 280, 120
+;zip
+InputBox, zip, Zip, , , 280, 120
+
+;cont
+InputBox, contact, Contact, , , 280, 120
+;phone
+InputBox, phone, Phone, , , 280, 120
+;email
+InputBox, email, Email, , , 280, 120
+return
+
+;Outputs
+;Cust
+::cust::
+sendInput,%customer%
+return
+;SRO
+::sro::
+sendInput,%sro%
+return
+
+;addr
+::addr::
+sendInput,%address%
+return
+::cit::
+sendInput,%cit%
+return
+;sta
+::sta::
+sendInput,%state%
+return
+;zip
+::zip::
+sendInput,%zip%
+return
+
+;cont
+::cont::
+sendInput,%contact%
+return
+;phone
+::phone::
+sendInput,%phone%
+return
+;email
+::email::
+sendInput,%email%
+return
+
+
+;Test samples
+;Input
+^k::
+InputBox, fe, Ferrous, , , 280, 120
+InputBox, nfe, Non-Ferrous, , , 280, 120
+InputBox, ss, Stainless, , , 280, 120
+return
+
+;Output
+::fesm::
+sendinput,%fe%
+return
+::nfesm::
+sendInput,%nfe%
+return
+::sssm::
+sendInput,%ss%
+return
+
+::ma de::
+sendInput,Machine detects and rejects all samples at this time. %fe% mm Fe, %nfe% mm NFe, %ss% mm SS.
+return
+
+::noiss::No issues found during visit.
+
+;rad
+^r::
+InputBox, rad, Highest rad output, , , 280, 120
+return
+
+;output
+::xrpm::
+sendInput,-Discussed scope of work with customer.
+-Radiation survey performed, maximum output measured at %rad% uSv/hr. Certificate completed and supplied to customer. -Backup taken and supplied to customer.
+
+#SingleInstance Force
